@@ -13,7 +13,7 @@ public class User {
         return id;
     }
 
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
