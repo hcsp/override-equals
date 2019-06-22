@@ -5,7 +5,7 @@ public class User {
     private String name;
 
     public User(Integer id, String name) {
-        this.id = this.id;
+        this.id = id;
         this.name = name;
     }
 
