@@ -25,15 +25,4 @@ public class User {
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
 
-
-    @Override
-    public boolean equals(Object obj) {
-        if(this==obj) return true;
-        if(obj==null) return false;
-        User other = (User)obj;
-        if(id!=other.id){
-            return false;
-        }
-        return true;
-    }
 }
