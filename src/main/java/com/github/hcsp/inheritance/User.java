@@ -1,4 +1,5 @@
 package com.github.hcsp.inheritance;
+import java.util.Objects;
 
 public class User {
     private Integer id;
