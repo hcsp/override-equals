@@ -30,6 +30,6 @@ public class User {
             return false;
         }
         User u = (User) o;
-        return Object.equals(id, u.getId());
+        return id.equals(u.getId());
     }
 }
