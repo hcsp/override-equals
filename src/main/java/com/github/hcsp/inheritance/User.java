@@ -30,7 +30,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id);
+        return Object.equals(id, user.id);
     }
 
     @Override
