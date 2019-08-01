@@ -26,7 +26,7 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof User) {
-            return this.id == ((User)obj).id;
+            return this.id.equals(((User) obj).id);
         } else {
             return false;
         }
