@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 public class UserTest {
     @Test
     public void test() {
+        Assertions.assertEquals(new User(1234, ""), new User(1234, ""));
         Assertions.assertEquals(new User(1, ""), new User(1, ""));
         Assertions.assertNotEquals(new User(1, ""), new User(2, ""));
         Assertions.assertFalse(new User(1, "").equals(null));
