@@ -9,15 +9,6 @@ public class User {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object user) {
-        if (user instanceof User) {
-            return this.id.equals(((User)user).id);
-        } else {
-            return this == user;
-        }
-    }
-
     public Integer getId() {
         return id;
     }
