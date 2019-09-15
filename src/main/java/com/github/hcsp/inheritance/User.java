@@ -24,5 +24,7 @@ public class User {
     }
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
-
+    public boolean equals(User user){
+        return user.id.equals(id);
+    }
 }
