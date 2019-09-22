@@ -1,6 +1,7 @@
 package com.github.hcsp.inheritance;
 
-public class User {
+
+public class User{
     private Integer id;
     private String name;
 
@@ -8,13 +9,26 @@ public class User {
         this.id = id;
         this.name = name;
     }
-
     public Integer getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object Object){
+            if(Object instanceof User) {
+                User O = (User) Object;
+                if (this.id.equals(O.id)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }else{
+                return false;
+            }
     }
 
     public static void main(String[] args) {
