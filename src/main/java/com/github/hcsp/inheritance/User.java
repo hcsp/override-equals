@@ -1,6 +1,5 @@
 package com.github.hcsp.inheritance;
 
-import com.sun.org.apache.xpath.internal.objects.XObject;
 
 public class User{
     private Integer id;
