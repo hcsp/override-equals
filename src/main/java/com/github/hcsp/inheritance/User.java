@@ -1,5 +1,7 @@
 package com.github.hcsp.inheritance;
 
+import javax.jws.soap.SOAPBinding;
+
 public class User {
     private Integer id;
     private String name;
@@ -16,10 +18,16 @@ public class User {
     public String getName() {
         return name;
     }
-
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof User){
+            return this.id.equals(((User)obj).id);
+        }
+        return false;
+    }
     public static void main(String[] args) {
         System.out.println(new User(1, "user1") == new User(1, "user1"));
-        System.out.println(new User(1, "user1").equals(new User(1, "user1")));
+        System.out.println(new User(1234, "user1").equals(new User(1234, "user1")));
         System.out.println(new User(1, "user1").equals(new User(2, "user2")));
     }
 
