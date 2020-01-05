@@ -24,7 +24,7 @@ public class User {
     }
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
-    //重新提交
+    //意外修改了pom文件
     @Override
     public boolean equals(Object obj) {
         if(obj instanceof User) {
