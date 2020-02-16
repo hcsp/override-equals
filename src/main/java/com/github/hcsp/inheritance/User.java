@@ -23,6 +23,17 @@ public class User {
         System.out.println(new User(1, "user1").equals(new User(2, "user2")));
     }
 
+    @Override
+    public boolean equals(Object user) {
+        boolean isSame;
+        if (user instanceof User) {
+            isSame = (this.id.equals(((User) user).id));
+        } else {
+            isSame = false;
+        }
+        return isSame;
+    }
+
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
 
 }
