@@ -28,13 +28,25 @@ public class User {
     // 如果参数类型填User，此时无法使用Override注解，因为参数类型变了，此时相当于另写了一个equals方法，而没有覆盖Object.equals()
     @Override
     public boolean equals(Object anotherUser){
-        // 需要考虑null并做类型判断
-        if(anotherUser == null){
-            return false;
+//        // 需要考虑null并做类型判断
+//        if(anotherUser == null){
+//            return false;
+//        }
+//        else if (this.getClass() != anotherUser.getClass()) {
+//            return false;
+//        }
+//        return this.id.equals(((User)anotherUser).id);
+
+        // 更好的写法
+        if(anotherUser instanceof User) {
+            return this.id.equals(((User) anotherUser).id);
         }
-        else if (this.getClass() != anotherUser.getClass()) {
-            return false;
-        }
-        return this.id.equals(((User)anotherUser).id);
+        return false;
+    }
+
+    // 重写equals方法也需要重写hashcode方法，确保相同的对象具有相同的散列码
+    @Override
+    public int hashCode(){
+        return id.hashCode() + name.hashCode();
     }
 }
