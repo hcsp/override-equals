@@ -23,6 +23,20 @@ public class User {
         System.out.println(new User(1, "user1").equals(new User(2, "user2")));
     }
 
-    // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
 
+
+    // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        User user = (User) obj;
+        return user.id.equals(getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
