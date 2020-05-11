@@ -1,7 +1,5 @@
 package com.github.hcsp.inheritance;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
-
 import java.util.Objects;
 
 public class User {
@@ -35,5 +33,10 @@ public class User {
         }
         User user = (User)o;
         return  id.equals(user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
