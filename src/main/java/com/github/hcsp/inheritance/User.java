@@ -22,7 +22,6 @@ public class User {
     public static void main(String[] args) {
             System.out.println(new User(1, "user1") == new User(1, "user1"));
             System.out.println(new User(1, "user1").equals(new User(1, "user1")));
-            System.out.println(new User(1, "user1").equals(new User(null, "user2")));
             System.out.println(new User(1, "user1").equals(null));
     }
 
@@ -33,6 +32,6 @@ public class User {
         if (u instanceof User){
             return this.id == ((User) u).id;
         }
-        return super.equals(u);
+        return false;
     }
 }
