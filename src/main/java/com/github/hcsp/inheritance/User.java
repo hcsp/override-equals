@@ -13,16 +13,19 @@ public class User {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
+        public String getName() {
+            return name;
+        }
 
-    public boolean equals(User u) {
-        return (u.id == this.id);
-    }
+        public boolean equals(User u) {
+            if (u == null) {
+                return false;
+            }
+            return (u.id == this.id);
+        }
 
-    public static void main(String[] args) {
-        System.out.println(new User(1, "user1") == new User(1, "user1"));
+        public static void main(String[] args) {
+            System.out.println(new User(1, "user1") == new User(1, "user1"));
         System.out.println(new User(1, "user1").equals(new User(1, "user1")));
         System.out.println(new User(1, "user1").equals(new User(2, "user2")));
     }
