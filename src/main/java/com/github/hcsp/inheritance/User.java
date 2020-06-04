@@ -24,5 +24,10 @@ public class User {
     }
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof User)) return false;
 
+        return this.getId().equals(((User) other).getId());
+    }
 }
