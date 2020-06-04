@@ -30,4 +30,9 @@ public class User {
 
         return this.getId().equals(((User) other).getId());
     }
+
+    @Override
+    public int hashCode() {
+        return this.getId();
+    }
 }
