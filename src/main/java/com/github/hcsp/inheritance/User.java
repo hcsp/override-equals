@@ -1,5 +1,7 @@
 package com.github.hcsp.inheritance;
 
+import java.util.Objects;
+
 public class User {
     private Integer id;
     private String name;
@@ -27,11 +29,15 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof User) {
-            return (this.getId() == ((User) obj).getId());
+            return this.id == ((User) obj).id;
         } else {
             return false;
 
         }
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
 }
