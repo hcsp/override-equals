@@ -28,13 +28,15 @@ public class User {
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof User) {
-            return this.id == ((User) obj).id;
-        } else {
+        if (this == obj) {
+            return true;
+        } else if (obj == null || !(obj instanceof User)) {
             return false;
-
+        } else {
+            return this.id == ((User) obj).id;
         }
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
