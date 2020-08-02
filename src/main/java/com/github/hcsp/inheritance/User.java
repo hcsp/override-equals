@@ -33,7 +33,7 @@ public class User {
         } else if (obj == null || !(obj instanceof User)) {
             return false;
         } else {
-            return this.id == ((User) obj).id;
+            return (this.id).equals (((User) obj).id);
         }
     }
 
