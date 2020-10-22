@@ -28,7 +28,7 @@ public class User {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof User) {
-            return this.id == ((User) obj).id;
+            return this.getId().equals(((User) obj).getId());
         }
         return false;
     }
