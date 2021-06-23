@@ -25,12 +25,12 @@ public class User<equals> {
     }
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
-    //@Override
-    public boolean equals (User user) {
+    @Override
+    public boolean equals (Object user) {
         if (user == null) {
             return false;
         } else {
-            return this.id.intValue() == user.id.intValue();
+            return this.id.intValue() == ((User) user).id.intValue();
         }
     }
 }
