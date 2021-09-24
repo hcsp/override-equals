@@ -17,6 +17,14 @@ public class User {
         return name;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof User) {
+            return ((User)obj).id == this.id;
+        }
+        return false;
+
+    }
     public static void main(String[] args) {
         System.out.println(new User(1, "user1") == new User(1, "user1"));
         System.out.println(new User(1, "user1").equals(new User(1, "user1")));
