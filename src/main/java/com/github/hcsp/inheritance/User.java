@@ -1,5 +1,7 @@
 package com.github.hcsp.inheritance;
 
+import java.util.Objects;
+
 public class User {
     private Integer id;
     private String name;
@@ -18,13 +20,18 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if(obj instanceof User) {
-            return ((User)obj).id == this.id;
-        }
-        return false;
-
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
     public static void main(String[] args) {
         System.out.println(new User(1, "user1") == new User(1, "user1"));
         System.out.println(new User(1, "user1").equals(new User(1, "user1")));
