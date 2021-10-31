@@ -30,9 +30,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        User o1 = (User)o;
-        return this.getId().equals(o1.getId());
-
+        return this.getClass().equals(o.getClass())&&this.getId().equals(((User)o).getId());
     }
 
     @Override
