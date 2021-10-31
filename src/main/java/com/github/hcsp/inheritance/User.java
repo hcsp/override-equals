@@ -30,7 +30,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        return this.getClass().equals(o.getClass())&&this.getId().equals(((User)o).getId());
+        return o != null && this.getClass().equals(o.getClass()) && this.getId().equals(((User) o).getId());
     }
 
     @Override
