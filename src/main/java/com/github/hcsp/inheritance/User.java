@@ -1,6 +1,8 @@
 package com.github.hcsp.inheritance;
 
-public class User {
+import java.util.Objects;
+
+public class User{
     private Integer id;
     private String name;
 
@@ -25,4 +27,30 @@ public class User {
 
     // 请在这里覆盖equals方法，使得两个相同ID的用户equals返回true
 
+//    @Override
+//    public boolean equals(Object obj) {
+//
+//        while (obj instanceof User) {
+//            User u = (User)obj;
+//            if (this.id == u.getId()) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        }
+//        return false;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
+
