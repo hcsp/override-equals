@@ -28,6 +28,7 @@ public class User extends Object {
     @Override
     public boolean equals(Object obj) {
 
+
         User u = (User)obj;
         if (this.id == u.getId()) {
             return true;
