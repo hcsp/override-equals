@@ -1,6 +1,6 @@
 package com.github.hcsp.inheritance;
 
-import org.graalvm.compiler.lir.LIRInstruction;
+
 
 import java.util.Objects;
 
@@ -36,11 +36,8 @@ public class User {
 
         User user = (User) o;
 
-        return id != null ? id.equals(user.id) : user.id == null;
+        return Objects.equals(this.getId(),user.getId());
     }
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+
 }
