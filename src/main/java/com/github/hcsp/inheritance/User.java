@@ -1,4 +1,5 @@
 package com.github.hcsp.inheritance;
+import java.util.Objects;
 
 public class User {
     private Integer id;
@@ -26,7 +27,7 @@ public class User {
             return false;
         }
         User user = (User) obj;
-        return getId() == user.getId();
+        return Objects.equals(this.id, ((User) obj).id);
     }
 
     public static void main(String[] args) {
