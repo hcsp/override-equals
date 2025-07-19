@@ -16,6 +16,17 @@ public class User {
     public String getName() {
         return name;
     }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj){
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        User other = (User) obj;
+        return this.id != null && this.id.equals(other.id);
+    }
 
     public static void main(String[] args) {
         System.out.println(new User(1, "user1") == new User(1, "user1"));
