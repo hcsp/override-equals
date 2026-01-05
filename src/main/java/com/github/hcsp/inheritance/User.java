@@ -1,10 +1,12 @@
 package com.github.hcsp.inheritance;
 
+import java.util.Objects;
+
 public class User {
-    private Integer id;
+    private Integer id;    // 成员变量
     private String name;
 
-    public User(Integer id, String name) {
+    public User(Integer id, String name) {   // 构造器
         this.id = id;
         this.name = name;
     }
@@ -15,6 +17,18 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(getId(), user.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
     }
 
     public static void main(String[] args) {
